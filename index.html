@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neenu Sara | UI/UX Designer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.svg" alt="Neenu Sara Logo">
+    </div>
+
+    <nav>
+        <a href="index.html" class="active">WORK</a>
+        <a href="info.html">INFO</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero fade-in">
+        <h1>
+            <strong>Neenu Sara</strong> is a UI/UX Designer crafting meaningful digital experiences with a focus on clean design and usability.
+        </h1>
+    </section>
+
+    <!-- GRID -->
+    <section class="grid">
+
+        <!-- PROJECT 1 -->
+       <a href="https://www.figma.com/proto/tJzt2w9M01YasnzXIa0fIc/Slize-theory?t=0u8SpVY1jSPdl43F-1"
+        class="grid-item pizza-card">
+    <div class="pizza-stage">
+        <div class="pizza-circle"></div>
+        <div class="slice s1"></div>
+        <div class="slice s2"></div>
+        <div class="slice s3"></div>
+        <div class="slice s4"></div>
+        <div class="slice s5"></div>
+        <div class="slice s6"></div>
+    </div>
+    
+
+    <div class="overlay">
+        <div>
+            <h3>Slice Theory</h3>
+            <p>PIZZA SHOP PROTOTYPE 🍕</p>
+        </div>
+    </div>
+
+</a>
+    
+
+            
+
+        <!-- PROJECT 2 -->
+        <a href="" class="grid-item">
+            <div class="placeholder-img">🥗</div>
+            <div class="overlay">
+                <span>Coming Soon</span>
+            </div>
+        </a>
+
+        <!-- PROJECT 3 -->
+<a href="https://www.figma.com/design/vRuvKH2dHQd72z3NywlS1i/PlateWise?m=auto&t=ofnJ157tyLBiR6tV-6" class="grid-item">
+
+    <div class="project-image">
+        <img src="platewise.png" alt="Recipe Nutrition App">
+    </div>
+
+    <div class="overlay">
+        <span>Recipe Nutrition Calculator App Design 🥗</span>
+    </div>
+
+</a>
+
+        <!-- PROJECT 4 -->
+        <a href="https://www.figma.com/proto/8WGMIXqtm5ouV69uLmVZXB/Untitled?node-id=12-4&t=SGpXS824tFiK1Wgu-1" class="grid-item">
+            <div class="placeholder-img">✨</div>
+            <div class="overlay">
+                <span>Product design</span>
+            </div>
+        </a>
+        
+         <!-- PROJECT 5 -->
+         <a href="https://neenu04.github.io/Curations/" class="grid-item">
+         <div class="project-image">
+         <img src="curation.JPG" alt="E-commerce Website">
+         </div>
+
+         <div class="overlay">
+        <span>E-commerce Website 🛍️</span>
+         </div>
+        </a>
+    </section>
+
+</main>
+
+<footer>
+    <div>Neenu Sara • 📍Cambridge, ON</div>
+
+    <div class="footer-links">
+        <a href="https://www.linkedin.com/in/neenu-saji/" target="_blank">LinkedIn</a>
+        <a href="#">Instagram</a>
+        <a href="mailto:neenusara965@gmail.com">Email</a>
+    </div>
+</footer>
+<script>
+const pizzaCard = document.querySelector(".pizza-card");
+
+if (pizzaCard) {
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                // reset animation (important for loop feel)
+                pizzaCard.classList.remove("active");
+
+                // force reflow so animation can restart
+                void pizzaCard.offsetWidth;
+
+                pizzaCard.classList.add("active");
+            }
+
+        });
+    }, {
+        threshold: 0.6
+    });
+
+    observer.observe(pizzaCard);
+}
+</script>
+
+</body>
+</html>
