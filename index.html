@@ -14,8 +14,8 @@
 
 <header>
     <div class="logo">
-        <img src="logo.svg" alt="Neenu Sara Logo">
-    </div>
+    NS
+</div>
 
     <nav>
         <a href="index.html" class="active">WORK</a>
@@ -52,22 +52,12 @@
     <div class="overlay">
         <div>
             <h3>Slice Theory</h3>
-            <p>PIZZA SHOP PROTOTYPE 🍕</p>
+            <p>Pizza Web Design Prototype | Figma 🍕</p>
         </div>
     </div>
 
 </a>
-    
-
-            
-
-        <!-- PROJECT 2 -->
-        <a href="" class="grid-item">
-            <div class="placeholder-img">🥗</div>
-            <div class="overlay">
-                <span>Coming Soon</span>
-            </div>
-        </a>
+        
 
         <!-- PROJECT 3 -->
 <a href="https://www.figma.com/design/vRuvKH2dHQd72z3NywlS1i/PlateWise?m=auto&t=ofnJ157tyLBiR6tV-6" class="grid-item">
@@ -77,16 +67,18 @@
     </div>
 
     <div class="overlay">
-        <span>Recipe Nutrition Calculator App Design 🥗</span>
+        <span>Mobile App Prototype 🥗</span>
     </div>
 
 </a>
 
         <!-- PROJECT 4 -->
-        <a href="https://www.figma.com/proto/8WGMIXqtm5ouV69uLmVZXB/Untitled?node-id=12-4&t=SGpXS824tFiK1Wgu-1" class="grid-item">
-            <div class="placeholder-img">✨</div>
+        <a href="https://www.figma.com/proto/8WGMIXqtm5ouV69uLmVZXB/Untitled?t=IQI8vPqKbC8Envoz-1" class="grid-item">
+            <div class="project-image">✨
+                <img src="Zesti.png" alt="App">
+            </div>
             <div class="overlay">
-                <span>Product design</span>
+                <span>Branding | Product design</span>
             </div>
         </a>
         
@@ -100,46 +92,26 @@
         <span>E-commerce Website 🛍️</span>
          </div>
         </a>
+
+         <!-- PROJECT 2 -->
+        <a href="" class="grid-item">
+            <div class="placeholder-img">🥗</div>
+            <div class="overlay">
+                <span>Coming Soon</span>
+            </div>
+        </a>
     </section>
 
 </main>
-
 <footer>
     <div>Neenu Sara • 📍Cambridge, ON</div>
 
     <div class="footer-links">
         <a href="https://www.linkedin.com/in/neenu-saji/" target="_blank">LinkedIn</a>
-        <a href="#">Instagram</a>
-        <a href="mailto:neenusara965@gmail.com">Email</a>
+        <a href="https://www.instagram.com/sara_._saji_._/">Instagram</a>
+        <a href="neenusara965@gmail.com">Email</a>
     </div>
 </footer>
-<script>
-const pizzaCard = document.querySelector(".pizza-card");
-
-if (pizzaCard) {
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                // reset animation (important for loop feel)
-                pizzaCard.classList.remove("active");
-
-                // force reflow so animation can restart
-                void pizzaCard.offsetWidth;
-
-                pizzaCard.classList.add("active");
-            }
-
-        });
-    }, {
-        threshold: 0.6
-    });
-
-    observer.observe(pizzaCard);
-}
-</script>
 
 </body>
 </html>
