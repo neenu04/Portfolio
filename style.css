@@ -486,3 +486,269 @@ footer {
     100% { opacity: 0; }
 }
 
+/* ========================================= */
+/* ARCHIVE PAGE - FULL STYLES                */
+/* ========================================= */
+
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif; /* Professional clean font */
+}
+
+body {
+  background: #ffffff;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* HEADER & NAV */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  background: #fff;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #888;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+}
+
+nav a.active, nav a:hover {
+  color: #000;
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 80px 20px 100px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* GRID SYSTEM */
+.grid {
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+.card {
+    aspect-ratio: 1 / 1;
+    position: relative; /* Essential for containing absolute children */
+    overflow: hidden;
+    background: #ffffff; 
+    border: 0.5px solid #eee; /* Optional: adds a very faint border between flush images */
+}
+
+/* FIX: Ensure all images (static and sliding) don't crop */
+.card img, .slide {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Prevents cropping */
+    background: #ffffff;
+    padding: 10px;
+}
+/* Arrow Button Styles */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    transform: translateY(-50%);
+    z-index: 15; /* Sits above the overlay */
+    pointer-events: none; /* Allows hover on the card still */
+}
+.prev-btn, .next-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    pointer-events: auto; /* Makes only the buttons clickable */
+    transition: 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: #000;
+    color: #fff;
+}
+/* Hide arrows until hover */
+.slider-controls {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card:hover .slider-controls {
+    opacity: 1;
+}
+/* OVERLAY TEXT */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 5; /* Stays above sliding images */
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.overlay h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.overlay p {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* ========================================= */
+/* SLIDESHOW FIX FOR SKETCHES                */
+/* ========================================= */
+
+/* SLIDESHOW SPECIFICS */
+.slideshow-container {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    opacity: 0;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* OVERLAY - Stays on top */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 10; /* Keeps text above the images */
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+
+
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  font-size: 12px;
+  color: #999;
+}
+
+.footer-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #999;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  header, footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+/* FOOTER - Aligned to edges */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  font-size: 12px;
+  color: #666;
+}
+
+.footer-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #666;
+}
