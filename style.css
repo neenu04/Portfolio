@@ -766,3 +766,180 @@ footer {
   text-decoration: none;
   color: #666;
 }
+
+
+
+/* ========================= */
+/* PLATEWISE FINAL DESIGN    */
+/* ========================= */
+/* ========================= */
+
+
+.platewise-page .pw-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+
+    padding: 120px 80px 60px;
+}
+
+/* LEFT */
+.platewise-page .pw-left {
+    flex: 1;
+}
+
+/* RIGHT IMAGE */
+.platewise-page .pw-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.platewise-page .pw-right img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+}
+
+/* TEXT STYLES */
+.pw-year {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.pw-desc {
+    margin: 20px 0;
+    line-height: 1.6;
+    color: #444;
+}
+
+.pw-meta p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.pw-meta span {
+    color: #999;
+    margin-right: 10px;
+}
+
+.pw-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #2D5A27;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/* ========================= */
+/* PROCESS SECTIONS          */
+/* ========================= */
+
+.platewise-page .pw-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+
+    padding: 80px;
+}
+
+/* REVERSE LAYOUT */
+.platewise-page .pw-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* TEXT */
+.pw-text {
+    flex: 1;
+}
+
+.pw-text h2 {
+    margin-bottom: 15px;
+}
+
+.pw-text p {
+    color: #444;
+    line-height: 1.6;
+}
+
+/* IMAGE */
+.pw-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.pw-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+}
+
+/* CASE STUDY */
+.pw-case {
+    text-align: center;
+    padding: 80px;
+}
+
+.pw-case a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #5FAE6E;
+}
+
+/* ========================= */
+/* RESPONSIVE                */
+/* ========================= */
+
+@media (max-width: 900px) {
+
+    .platewise-page .pw-hero,
+    .platewise-page .pw-row {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .pw-right img,
+    .pw-image img {
+        max-width: 100%;
+    }
+}
+
+/************************/
+.pw-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.pw-btn {
+  padding: 10px 16px;
+  background: #5FAE6E;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.pw-btn:hover {
+  background: #333;
+}
+
+/* Optional secondary style for research link */
+.pw-secondary {
+  background: transparent;
+  color: #5FAE6E;
+  border: 1px solid #eff3ef;
+}
+
+.pw-secondary:hover {
+  background: #5FAE6E;
+  color: #fff;
+}
