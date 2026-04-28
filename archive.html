@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive | Neenu Sara</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NS</div>
+    <nav>
+        <a href="index.html">WORK</a>
+        <a href="info.html">INFO</a>
+        <a href="archive.html" class="active">ARCHIVE</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <p class="subtitle">Creative work</p>
+    <h1>Archive — Creative Explorations</h1>
+    <p class="description">
+      A curated collection of posters, photography, and drawings that reflect my visual thinking and creativity.
+    </p>
+</section>
+
+<section class="grid">
+    <div class="card">
+        <img src="images/Poster1.jpg" alt="Posters">
+        <div class="overlay">
+            <h3>Posters</h3>
+            <p>Typography & Visual Design</p>
+        </div>
+    </div> 
+
+    <div class="card">
+        <img src="images/poster2.jpg" alt="Posters">
+        <div class="overlay">
+            <h3>Posters</h3>
+            <p>Typography & Visual Design</p>
+        </div>
+    </div> 
+
+    <div class="card" id="sketches-card">
+        <div class="slideshow-container">
+            <img src="images/sketchcoverpage.jpg" class="slide active">
+            <img src="images/D1.jpg" class="slide">
+            <img src="images/D2.jpg" class="slide">
+            <img src="images/D3.jpg" class="slide">
+            <img src="images/D4.jpg" class="slide">
+            <img src="images/D5.jpg" class="slide">
+            <img src="images/D6.jpg" class="slide">
+            <img src="images/D7.jpg" class="slide">
+            <img src="images/D8.jpg" class="slide">
+            <img src="images/D9.jpg" class="slide">
+            <img src="images/D10.jpg" class="slide">
+            <img src="images/D11.jpg" class="slide">
+            <img src="images/D12.jpg" class="slide">
+            <img src="images/D13.jpg" class="slide">
+            </div>
+        <div class="slider-controls">
+            <button class="prev-btn">←</button>
+            <button class="next-btn">→</button>
+        </div>
+        <div class="overlay">
+            <h3>Sketches</h3>
+            <p><i>Use arrows to flip through</i></p>
+        </div>
+    </div>
+
+    <div class="card" id="photo-card">
+        <div class="slideshow-container">
+            <img src="images/photo-cover.jpg" class="slide active">
+            <img src="images/event1.jpeg" class="slide">
+            <img src="images/event2.jpeg" class="slide">
+            <img src="images/photocn.jpeg" class="slide">
+        </div>
+        <div class="overlay">
+  <h3>Photography</h3>
+  <p>Collaborative | Visual storytelling</p>
+  <a href="https://www.instagram.com/xavier_jr.photography?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+</div>
+    </div>
+</section>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        // --- 1. Automatic Slide for Photography ---
+        const photoSlides = document.querySelectorAll('#photo-card .slide');
+        let photoIndex = 0;
+        if (photoSlides.length > 0) {
+            setInterval(() => {
+                photoSlides[photoIndex].classList.remove('active');
+                photoIndex = (photoIndex + 1) % photoSlides.length;
+                photoSlides[photoIndex].classList.add('active');
+            }, 3500);
+        }
+
+        // --- 2. Manual Slide for Sketches ---
+        const sketchSlides = document.querySelectorAll('#sketches-card .slide');
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        let sketchIndex = 0;
+
+        function updateSketch(newIndex) {
+            sketchSlides[sketchIndex].classList.remove('active');
+            sketchIndex = (newIndex + sketchSlides.length) % sketchSlides.length;
+            sketchSlides[sketchIndex].classList.add('active');
+        }
+
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Stop page jumping
+            updateSketch(sketchIndex + 1);
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            updateSketch(sketchIndex - 1);
+        });
+    });
+</script>
+
+<footer>
+    <div>Neenu Sara • 📍Cambridge, ON</div>
+    <div class="footer-links">
+        <a href="https://www.linkedin.com/in/neenu-saji/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/sara_._saji_._/">Instagram</a>
+        <a href="neenusara965@gmail.com">Email</a>
+    </div>
+</footer>
+</body>
+</html>
