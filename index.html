@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neenu Sara | UI/UX Designer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+    NS
+</div>
+
+    <nav>
+        <a href="index.html" class="active">WORK</a>
+        <a href="info.html">INFO</a>
+        <a href="archive.html">ARCHIVE</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero fade-in">
+        <h1>
+            <strong>Neenu Sara,</strong> a UI/UX Designer creating empathetic, human-centered digital experiences.
+        </h1>
+    </section>
+
+    <!-- GRID -->
+    <section class="workgrid">
+
+         <a href="KnotDiary.html" class="wgrid-item">
+            <div class="project-image">
+                <img src="images/knotdiarycover.jpg" alt="Wedding Planner App">
+            </div>
+            <div class="overlay">
+                <h3>The Knot Diary</h3>
+                <span>Mobile App Prototype</span>
+            </div>
+        </a>
+        
+        <a href="slizetheory.html" class="wgrid-item">
+            <div class="pizza-stage">
+                <div class="pizza-circle"></div>
+                <div class="slice s1"></div>
+                <div class="slice s2"></div>
+                <div class="slice s3"></div>
+            </div>
+            <div class="overlay">
+                <h3>Slice Theory</h3>
+                <p>Pizza Web Design Prototype | Figma 🍕</p>
+            </div>
+        </a>
+
+        <a href="platewise.html" class="wgrid-item">
+            <div class="project-image">
+                <img src="images/platewise.jpg" alt="Recipe Nutrition App">
+            </div>
+            <div class="overlay">
+                <h3>PlateWise</h3>
+                <span>Mobile App Prototype 🥗</span>
+            </div>
+        </a>
+
+        <a href="https://www.figma.com/proto/8WGMIXqtm5ouV69uLmVZXB/Untitled?t=IQI8vPqKbC8Envoz-1" target="_blank" class="wgrid-item">
+            <div class="project-image">
+                <img src="images/juice.jpeg" alt="Product images">
+            </div>
+            <div class="overlay">
+                <h3>Zestie</h3>
+                <span>Branding | Product design</span>
+            </div>
+        </a>
+        
+        <a href="https://neenu04.github.io/Curations/" target="_blank" class="wgrid-item">
+            <div class="project-image">
+                <img src="images/curation.JPG" alt="E-commerce Website">
+            </div>
+            <div class="overlay">
+                <h3>Curations</h3>
+                <span>E-commerce Website 🛍️</span>
+            </div>
+        </a>
+
+       
+        <a href="https://www.behance.net/gallery/250226709/Animation" target="_blank" class="wgrid-item">
+    <div class="project-image">
+        <img src="images/animation.png" alt="UI Animation Project">
+    </div>
+    <div class="overlay">
+        <h3>UI Animation - Google Flow</h3>
+        <span>Micro-interaction & Motion Design 🎞️</span>
+    </div>
+</a>
+
+
+        <a href="#" class="wgrid-item">
+            <div class="placeholder-img">🥗</div>
+            <div class="overlay">
+                <h3>New Project</h3>
+                <span>Coming Soon</span>
+            </div>
+        </a>
+
+    </section>
+    </main>
+<footer>
+    <div>Neenu Sara • 📍Cambridge, ON</div>
+
+    <div class="footer-links">
+        <a href="https://www.linkedin.com/in/neenu-saji/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/sara_._saji_._/">Instagram</a>
+        <a href="mailto:neenusara965@gmail.com?subject=Portfolio%20Inquiry">Email</a>
+    </div>
+</footer>
+
+
+
+<!-- 2. Typewriter -->
+<script>
+  (function () {
+    const hero = document.querySelector('.hero h1');
+    if (!hero) return;
+
+    const strong = hero.querySelector('strong');
+    const namePart = strong ? strong.textContent : 'Neenu Sara,';
+    const fullText = hero.textContent.trim();
+    const splitAt = fullText.indexOf(',') + 1;
+    const taglinePart = fullText.slice(splitAt);
+
+    hero.innerHTML = `<strong>${namePart}</strong><span id="typed-tagline"></span><span id="cursor" style="border-right:2px solid #444;margin-left:1px;animation:blink 0.7s step-end infinite;">&nbsp;</span>`;
+
+    if (!document.getElementById('blink-style')) {
+      const s = document.createElement('style');
+      s.id = 'blink-style';
+      s.textContent = '@keyframes blink { 50% { opacity: 0; } }';
+      document.head.appendChild(s);
+    }
+
+    const target = document.getElementById('typed-tagline');
+    let i = 0;
+
+    function typeNext() {
+      if (i < taglinePart.length) {
+        target.textContent += taglinePart[i];
+        i++;
+        setTimeout(typeNext, 28);
+      } else {
+        setTimeout(() => {
+          const cur = document.getElementById('cursor');
+          if (cur) cur.style.transition = 'opacity 0.5s';
+          if (cur) cur.style.opacity = '0';
+          setTimeout(() => cur && cur.remove(), 600);
+        }, 1000);
+      }
+    }
+
+    typeNext();
+  })();
+</script>
+
+<!-- 3. Cycling keyword -->
+
+<script>
+  (function () {
+    const words = ['empathetic', 'thoughtful', 'intentional'];
+    let current = 0;
+
+    function waitForWord() {
+      const h1 = document.querySelector('.hero h1');
+      if (!h1) return;
+
+      const text = h1.textContent;
+      if (!text.includes('empathetic')) {
+        setTimeout(waitForWord, 200);
+        return;
+      }
+
+      const tagline = document.getElementById('typed-tagline');
+      if (!tagline) return;
+
+      tagline.innerHTML = tagline.textContent.replace(
+        words[0],
+        `<span id="cycle-word" style="
+          background: #e6f1fb;
+          color: #185fa5;
+          border-radius: 4px;
+          padding: 1px 7px;
+          transition: opacity 0.4s ease;
+        ">${words[0]}</span>`
+      );
+
+      setInterval(() => {
+        const el = document.getElementById('cycle-word');
+        if (!el) return;
+        el.style.opacity = '0';
+        setTimeout(() => {
+          current = (current + 1) % words.length;
+          el.textContent = words[current];
+          el.style.opacity = '1';
+        }, 400);
+      }, 2000);
+    }
+
+    waitForWord();
+  })();
+</script>
+
+</body>
+</html>
