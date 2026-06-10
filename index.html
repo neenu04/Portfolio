@@ -125,7 +125,7 @@
 
 <!-- 2. Typewriter -->
 <script>
-  (function () {
+  document.addEventListener('DOMContentLoaded', function () {
     const hero = document.querySelector('.hero h1');
     if (!hero) return;
 
@@ -163,13 +163,13 @@
     }
 
     typeNext();
-  })();
+  });
 </script>
 
 <!-- 3. Cycling keyword -->
 
 <script>
-  (function () {
+  document.addEventListener('DOMContentLoaded', function () {
     const words = ['empathetic', 'thoughtful', 'intentional'];
     let current = 0;
 
@@ -177,8 +177,7 @@
       const h1 = document.querySelector('.hero h1');
       if (!h1) return;
 
-      const text = h1.textContent;
-      if (!text.includes('empathetic')) {
+      if (!h1.textContent.includes('empathetic')) {
         setTimeout(waitForWord, 200);
         return;
       }
@@ -210,7 +209,7 @@
     }
 
     waitForWord();
-  })();
+  });
 </script>
 
 </body>
